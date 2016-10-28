@@ -1,0 +1,80 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Content/css/framework-all.css">
+    <link rel="shortcut icon" href="/Areas/Admin/Content/favicon.ico" />
+
+</head>
+<body class="st-no-select">
+
+    <div class="loader-back"><div class="loader2"></div></div>
+
+    <div class="navbar">
+        <a class="sidebar-toggle"></a>
+        @*<img src="/Areas/Admin/Content/images/fr_logo.png" class="fr-logo">*@
+        @*<a class="second-navbar-toggle"></a>*@
+        <div class="navbar-options">
+            <ul>
+                <li>
+                    <a>
+                        <img class="avatar" src="/Areas/Admin/Content/images/avatar1.png">
+                        <span>Nguyen Hoang Chuong</span>
+                    </a>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-user"></i> My Profile</a></li>
+                        <li><a href="#"><i class="fa fa-comments"></i> Messages</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li class="separator"></li>
+                        <li><a href="lock_screen.html"><i class="fa fa-lock"></i> Lock Account</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                </li>
+                <li id="show-search"><a><i class="fa fa-search"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="search-content">
+        <input class="control material searh-input" placeholder="Search for anything">
+        <span>&times;</span>
+    </div>
+
+    <div class="content-container">
+        @RenderPage("Menu.cshtml")
+        <div id="content-main">
+            <div class="content">
+                <div class="page-header">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="title">
+                            @RenderSection("PageHeader", required: false)
+                            <span>@RenderSection("PageDesc", required: false)</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 hidden-xs">
+                        <ul class="breadcrumb">
+                            <li>Extra Pages</li>
+                            <li class="active">Blank Page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                @RenderBody()
+            </div>
+            @RenderPage("Footer.cshtml")
+        </div>
+    </div>
+    @RenderPage("Setting.cshtml")
+    <script src="/Areas/Admin/Content/js/jquery.js"></script>
+    <script src="/Areas/Admin/Content/js/framework.js"></script>
+    <script src="/Areas/Admin/Content/js/bootstrap.min.js"></script>
+    <script src="/Areas/Admin/Content/js/jquery.slimscroll.min.js"></script>
+    <script src="/Areas/Admin/Content/js/styleDemo.js"></script>
+    @RenderSection("js", required: false)
+</body>
+</html>

@@ -3,74 +3,77 @@
     ViewBag.Title = "Chi tiết tin tức";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="blog-list-wrapper m-t-50 p-b-10 m-b-20">
-    <div class="row">
-        <div class="col-sm-8">
-            <!-- Image Post -->
-            <div class="blog-post m-b-30">
-                <div class="post-image">
-                    <img src="/Content/images/blog/3.jpg" alt="" class="img-responsive">
-                    <span class="label label-danger">Trial Shop</span>
-                </div>
-                <div class="text-muted"><span>by <a class="text-dark font-secondary">Nguyen Hoang Chuong</a>,</span> <span>@DateTime.Now.ToShortDateString()</span></div>
-                <div class="post-title">
-                    <h3><a href="javascript:void(0);">Exclusive: Get a First Look at the Fall Collection</a></h3>
-                </div>
-                <div>
-                    <p>
-                        Praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                        molestias excepturi sint occaecati cupiditate non provident,
-                        similique sunt in culpa qui officia deserunt mollitia animi, id est
-                        laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                        expedita distinctio.
-                    </p>
 
-                    <blockquote class="custom-blockquote margin-t-30">
+<div class="container">
+    <div class="blog-list-wrapper m-t-50 p-b-10 m-b-20">
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- Image Post -->
+                <div class="blog-post m-b-30">
+                    <div class="post-image">
+                        <img src="/Content/images/blog/3.jpg" alt="" class="img-responsive">
+                        <span class="label label-danger">Trial Shop</span>
+                    </div>
+                    <div class="text-muted"><span>by <a class="text-dark font-secondary">Nguyen Hoang Chuong</a>,</span> <span>@DateTime.Now.ToShortDateString()</span></div>
+                    <div class="post-title">
+                        <h3><a href="javascript:void(0);">Exclusive: Get a First Look at the Fall Collection</a></h3>
+                    </div>
+                    <div>
                         <p>
-                            When an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book. It has survived not only five centuries.
+                            Praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                            molestias excepturi sint occaecati cupiditate non provident,
+                            similique sunt in culpa qui officia deserunt mollitia animi, id est
+                            laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                            expedita distinctio.
                         </p>
-                        <footer>
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </footer>
-                    </blockquote>
 
-                    <p>
-                        Praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                        molestias excepturi sint occaecati cupiditate non provident,
-                        similique sunt in culpa qui officia deserunt mollitia animi, id est
-                        laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                        expedita distinctio.
-                    </p>
+                        <blockquote class="custom-blockquote margin-t-30">
+                            <p>
+                                When an unknown printer took a galley of type and scrambled it to
+                                make a type specimen book. It has survived not only five centuries.
+                            </p>
+                            <footer>
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </footer>
+                        </blockquote>
 
-                    <div class="text-center p-20">
-                        <h4 class="text-danger"><i>"Excepturi sint occaecati cupiditate non provident deserunt mollitia anim"</i></h4>
+                        <p>
+                            Praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                            molestias excepturi sint occaecati cupiditate non provident,
+                            similique sunt in culpa qui officia deserunt mollitia animi, id est
+                            laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                            expedita distinctio.
+                        </p>
+
+                        <div class="text-center p-20">
+                            <h4 class="text-danger"><i>"Excepturi sint occaecati cupiditate non provident deserunt mollitia anim"</i></h4>
+                        </div>
+
+                        <p class="text-muted">
+                            Praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                            molestias excepturi sint occaecati cupiditate non provident,
+                            similique sunt in culpa qui officia deserunt mollitia animi, id est
+                            laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                            expedita distinctio.
+                        </p>
+
+                        <blockquote class="blockquote-reverse margin-t-30">
+                            <p>
+                                When an unknown printer took a galley of type and scrambled it to
+                                make a type specimen book. It has survived not only five centuries.
+                            </p>
+                            <footer>
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </footer>
+                        </blockquote>
                     </div>
 
-                    <p class="text-muted">
-                        Praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                        molestias excepturi sint occaecati cupiditate non provident,
-                        similique sunt in culpa qui officia deserunt mollitia animi, id est
-                        laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                        expedita distinctio.
-                    </p>
-
-                    <blockquote class="blockquote-reverse margin-t-30">
-                        <p>
-                            When an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book. It has survived not only five centuries.
-                        </p>
-                        <footer>
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </footer>
-                    </blockquote>
                 </div>
-
-            </div>
-        </div> <!-- end col -->
-        <div class="col-sm-4">
-            @{ Html.RenderAction("Sidebar", "Blog");}
-        </div> <!-- end col -->
+            </div> <!-- end col -->
+            <div class="col-sm-4">
+                @{ Html.RenderAction("Sidebar", "Blog");}
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
     </div>
-    <!-- end row -->
 </div>

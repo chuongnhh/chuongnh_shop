@@ -1,0 +1,26 @@
+﻿body{
+    /*background-color:#f5f5f5;*/
+}
+.card-box{
+    border-radius:0px;
+}
+
+.carousel-indicators li{
+    border-radius:0px;
+}
+.card-box-custom{
+    padding:0px;
+}
+.form-group input{
+    border-radius:0px;
+}
+.form-group textarea{
+    border-radius:0px;
+}
+.property-detail-wrapper{
+    padding:0px;
+}
+
+.input-group input{
+    border-radius:0px;
+}

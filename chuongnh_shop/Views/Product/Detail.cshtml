@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Chi tiết sản phẩm | Spendingshop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    @*<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <link href="/Content/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <!-- ================== END PAGE LEVEL STYLE ================== -->*@
+}
+@section js{
+    @*<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="/Content/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="/Content/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+    <script src="/Content/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/Content/js/table-manage-responsive.demo.min.js"></script>
+    <script src="/Content/js/apps.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+    <script>
+        $(document).ready(function () {
+            App.init();
+            TableManageResponsive.init();
+        });
+    </script>*@
+}
+<!-- BEGIN #product -->
+<div id="product" class="section-container p-t-20">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN breadcrumb -->
+        <ul class="breadcrumb m-b-10 f-s-12">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li class="active">Outdoor LED</li>
+        </ul>
+        <!-- END breadcrumb -->
+        <!-- BEGIN product -->
+        <div class="product">
+            <!-- BEGIN product-detail -->
+            <div class="row">
+                <!-- BEGIN product-image -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <!-- BEGIN product-main-image -->
+                    <div style="padding:10px">
+                        <img src="/Upload/Images/Product/product2.jpg" class="img img-responsive" alt="" />
+                    </div>
+                    <!-- END product-main-image -->
+                </div>
+                <!-- END product-image -->
+                <!-- BEGIN product-info -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 p-t-10 p-lr-10">
+                    <!-- BEGIN product-info-header -->
+                    <div class="product-info-header">
+                        <h1 class="product-title"><span class="label label-success">Khuyến mãi 41%</span> Annet Underwater luminaires - #89270182 </h1>
+                        <ul class="product-category">
+                            <li><a href="#">Outdoor</a></li>
+                            <li>/</li>
+                            <li><a href="#">LED</a></li>
+                            <li>/</li>
+                            <li><a href="#"> Outdoor LED</a></li>
+                        </ul>
+                    </div>
+                    <!-- END product-info-header -->
+                    <!-- BEGIN product-warranty -->
+                    <div class="product-warranty">
+                        <div class="pull-right">Tình trạng: Còn hàng</div>
+                        <div><b>1 năm</b> bảo hành chính hãng</div>
+                    </div>
+                    <!-- END product-warranty -->
+                    <!-- BEGIN product-info-list -->
+                    <ul class="product-info-list">
+                        <li><i class="fa fa-circle"></i> A compact surface mounted underwater projector for lighting pools and synthetic pools and water jets of up to 2m in height.</li>
+                        <li><i class="fa fa-circle"></i> The luminaire rated CLASS III included with remote driver. Colour temperature 3000K and 4000K, LED CRI >80 and life time 50,000 Hours.</li>
+                        <li><i class="fa fa-circle"></i> Stainless steel grade 316 body. Stainless steel fasteners in grade 316. Cable entry PG.11 cable gland supplied with 2m of outdoor submersible power cable. Durable silicone rubber gasket and clear toughened glass.</li>
+                        <li><i class="fa fa-circle"></i> The floodlight must be submerged when operational.</li>
+                        <li><i class="fa fa-circle"></i> New 12-megapixel iSight camera</li>
+                        <li><i class="fa fa-circle"></i> Remote driver is included and required to be installed by others.</li>
+                        <li><i class="fa fa-circle"></i> Remote IP gear box is not included.</li>
+                    </ul>
+                    <!-- END product-info-list -->
+                    <!-- BEGIN product-social -->
+                    <div class="product-social">
+                        <ul>
+                            <li><a href="javascript:;" class="facebook" data-toggle="tooltip" data-trigger="hover" data-title="Facebook" data-placement="top"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="javascript:;" class="twitter" data-toggle="tooltip" data-trigger="hover" data-title="Twitter" data-placement="top"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="javascript:;" class="google-plus" data-toggle="tooltip" data-trigger="hover" data-title="Google Plus" data-placement="top"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="javascript:;" class="whatsapp" data-toggle="tooltip" data-trigger="hover" data-title="Whatsapp" data-placement="top"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="javascript:;" class="tumblr" data-toggle="tooltip" data-trigger="hover" data-title="Tumblr" data-placement="top"><i class="fa fa-tumblr"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- END product-social -->
+                    <!-- BEGIN product-purchase-container -->
+                    <div class="product-purchase-container">
+                        <div class="product-discount">
+                            <span class="discount">$869.00</span>
+                        </div>
+                        <div class="product-price">
+                            <div class="price">$749.00</div>
+                        </div>
+                        @*<button class="btn btn-inverse btn-lg" type="submit">ADD TO CART</button>*@
+                    </div>
+                    <!-- END product-purchase-container -->
+                </div>
+                <!-- END product-info -->
+            </div>
+            <!-- END product-detail -->
+            <!-- BEGIN table-responsive -->
+            <!-- BEGIN table-product -->
+            @*<table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>Tính năng</th>
+                        <th>iPhone 6s</th>
+                        <th>iPhone 6s Plus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="field">Capacity</td>
+                        <td>
+                            16GB<br />
+                            64GB<br />
+                            128GB
+                        </td>
+                        <td>
+                            16GB<br />
+                            64GB<br />
+                            128GB
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="field">Weight and Dimensions</td>
+                        <td>
+                            5.44 inches (138.3 mm) x 2.64 inches (67.1 mm) x 0.28 inch (7.1 mm)<br />
+                            Weight: 5.04 ounces (143 grams)
+                        </td>
+                        <td>
+                            6.23 inches (158.2 mm) x 3.07 inches (77.9 mm) x 0.29 inch (7.3 mm)<br />
+                            Weight: 6.77 ounces (192 grams)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>*@
+            <!-- END table-product -->
+            <!-- END table-responsive -->
+        </div>
+        <!-- END product -->
+        <!-- BEGIN similar-product -->
+        <h4 class="m-b-15 m-t-30">Bạn cũng có thể thích</h4>
+        <div class="row row-space-10">
+            @for (int i = 0; i < 8; i++)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-b-10">
+                    <!-- BEGIN item -->
+                    <div class="item item-thumbnail">
+                        <a href="product_detail.html" class="item-image">
+                            <img src="/Upload/Images/Product/product3.jpg" alt="">
+                            <div class="discount">Khuyến mãi 15%</div>
+                        </a>
+                        <div class="item-info">
+                            <h4 class="item-title">
+                                <a href="product_detail.html">Aqua Underwater luminaires</a>
+                            </h4>
+                            <p class="item-desc">A compact recessed underwater projector for swimming pools</p>
+                            <div class="item-price">$649.00</div>
+                            <div class="item-discount-price">$739.00</div>
+                        </div>
+                    </div>
+                    <!-- END item -->
+                </div>
+            }
+        </div>
+        <!-- END similar-product -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- END #product -->

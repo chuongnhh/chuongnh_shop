@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chuongnh_shop.CodeHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,7 @@ namespace chuongnh_shop.Controllers
         // GET: Contact
         public ActionResult Index()
         {
+            CurrentController.currentController = "Contact";
             return View();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chuongnh_shop.CodeHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,10 +12,12 @@ namespace chuongnh_shop.Controllers
         // GET: Blog
         public ActionResult Index()
         {
+            CurrentController.currentController = "Blog";
             return View();
         }
         public ActionResult Detail()
         {
+            CurrentController.currentController = "Post";
             return View();
         }
         [ChildActionOnly]

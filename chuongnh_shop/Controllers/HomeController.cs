@@ -1,4 +1,5 @@
-﻿using chuongnh_shop.Models;
+﻿using chuongnh_shop.CodeHelper;
+using chuongnh_shop.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace chuongnh_shop.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            CurrentController.currentController = "Home";
             return View();
         }
         [ChildActionOnly]
@@ -22,7 +24,7 @@ namespace chuongnh_shop.Controllers
             return PartialView(footer);
         }
         [ChildActionOnly]
-        public ActionResult Menu()
+        public ActionResult Header()
         {
             return PartialView();
         }

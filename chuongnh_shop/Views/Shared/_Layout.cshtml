@@ -1,58 +1,68 @@
-﻿<!DOCTYPE html>
-<html>
-
+﻿
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="nguyen hoang chuong">
-    <meta name="author" content="Nguyen Hoang Chuong">
-
-    <link rel="shortcut icon" href="/Content/favicon.ico">
-
+    <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
-    <!-- App css -->
-    <link href="/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/css/core.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/css/components.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/css/pages.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/css/menu.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/plugins/switchery/switchery.min.css" rel="stylesheet">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="/Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/style.min.css" rel="stylesheet" />
+    <link href="/Content/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="/Content/css/theme/default.css" id="theme" rel="stylesheet" />
+    <link href="/Content/css/animate.min.css" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/Content/plugins/pace/pace.min.js"></script>
     <link href="/Content/css/site.css" rel="stylesheet" />
-    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-    <script src="/Content/js/modernizr.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
     @RenderSection("css", required: false)
 </head>
-<body>
-    @{ Html.RenderAction("Menu", "Home");}
-    <div class="wrapper">
+<body class="bg-silver">
+    <!-- BEGIN #page-container -->
+    <div id="page-container" class="fade">
+        <!-- BEGIN #top-nav -->
+        @RenderPage("TopNav.cshtml")
+        <!-- END #top-nav -->
+        <!-- BEGIN #header -->
+        @{ Html.RenderAction("Header", "Home", null);}
+        <!-- END #header -->
+        <!-- BEGIN #slider -->
+        @*@RenderPage("Slider.cshtml")*@
+        <!-- END #slider -->
+        <!-- BEGIN #body -->
         @RenderBody()
-        <!-- Footer -->
-        @{ Html.RenderAction("Footer", "Home");}
-        <!-- End Footer -->
+        <!-- END #body -->
+        <!-- BEGIN #footer -->
+        @RenderPage("Footer.cshtml")
+        <!-- END #footer -->
     </div>
-    <!-- end wrapper -->
-    <!-- jQuery  -->
-    <script src="/Content/js/jquery.min.js"></script>
-    <script src="/Content/js/bootstrap.min.js"></script>
-    <script src="/Content/js/detect.js"></script>
-    <script src="/Content/js/fastclick.js"></script>
-    <script src="/Content/js/jquery.blockUI.js"></script>
-    <script src="/Content/js/waves.js"></script>
-    <script src="/Content/js/jquery.slimscroll.js"></script>
-    <script src="/Content/js/jquery.scrollTo.min.js"></script>
-    <script src="/Content/plugins/switchery/switchery.min.js"></script>
-
-    <!-- App js -->
-    <script src="/Content/js/jquery.core.js"></script>
-    <script src="/Content/js/jquery.app.js"></script>
+    <!-- END #page-container -->
+    <!-- begin theme-panel -->
+    @*@RenderPage("Theme.cshtml")*@
+    <!-- end theme-panel -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/Content/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="/Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="/Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="/Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="/Content/crossbrowserjs/respond.min.js"></script>
+        <script src="/Content/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="/Content/js/apps.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
     @RenderSection("js", required: false)
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
 </body>
 </html>

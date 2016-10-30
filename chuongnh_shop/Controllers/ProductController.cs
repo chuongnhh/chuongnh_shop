@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chuongnh_shop.CodeHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,13 @@ namespace chuongnh_shop.Controllers
         // GET: Product
         public ActionResult Index()
         {
+            CurrentController.currentController = "Product";
+            return View();
+        }
+        // GET: Product
+        public ActionResult Detail()
+        {
+            CurrentController.currentController = "Product";
             return View();
         }
     }

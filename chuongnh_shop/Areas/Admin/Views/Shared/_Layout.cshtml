@@ -1,80 +1,101 @@
-﻿
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
-    <link rel="stylesheet" type="text/css" href="/Areas/Admin/Content/css/framework-all.css">
-    <link rel="shortcut icon" href="/Areas/Admin/Content/favicon.ico" />
-
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="/Areas/Admin/Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/Areas/Admin/Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Areas/Admin/Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Areas/Admin/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="/Areas/Admin/Content/css/style.min.css" rel="stylesheet" />
+    <link href="/Areas/Admin/Content/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="/Areas/Admin/Content/css/theme/default.css" rel="stylesheet" id="theme" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/Areas/Admin/Content/plugins/pace/pace.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
 </head>
-<body class="st-no-select">
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+        <!-- begin #header -->
+        @RenderPage("Header.cshtml")
+        <!-- end #header -->
+        <!-- begin #sidebar -->
+        @RenderPage("Sidebar.cshtml")
+        <!-- end #sidebar -->
+        <!-- begin #content -->
+        <div id="content" class="content">
+            <!-- begin breadcrumb -->
+            <ol class="breadcrumb pull-right">
+                <li><a href="javascript:;">Home</a></li>
+                <li><a href="javascript:;">Page Options</a></li>
+                <li class="active">Blank Page</li>
+            </ol>
+            <!-- end breadcrumb -->
+            <!-- begin page-header -->
+            <h1 class="page-header">@RenderSection("PageHeader") <small>@RenderSection("PageDesc")</small></h1>
+            <!-- end page-header -->
 
-    <div class="loader-back"><div class="loader2"></div></div>
-
-    <div class="navbar">
-        <a class="sidebar-toggle"></a>
-        @*<img src="/Areas/Admin/Content/images/fr_logo.png" class="fr-logo">*@
-        @*<a class="second-navbar-toggle"></a>*@
-        <div class="navbar-options">
-            <ul>
-                <li>
-                    <a>
-                        <img class="avatar" src="/Areas/Admin/Content/images/avatar1.png">
-                        <span>Nguyen Hoang Chuong</span>
-                    </a>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-user"></i> My Profile</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> Messages</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                        <li class="separator"></li>
-                        <li><a href="lock_screen.html"><i class="fa fa-lock"></i> Lock Account</a></li>
-                        <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
-                    </ul>
-                </li>
-                <li id="show-search"><a><i class="fa fa-search"></i></a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="search-content">
-        <input class="control material searh-input" placeholder="Search for anything">
-        <span>&times;</span>
-    </div>
-
-    <div class="content-container">
-        @RenderPage("Menu.cshtml")
-        <div id="content-main">
-            <div class="content">
-                <div class="page-header">
-                    <div class="col-xs-12 col-md-6">
-                        <div class="title">
-                            @RenderSection("PageHeader", required: false)
-                            <span>@RenderSection("PageDesc", required: false)</span>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Panel Title here</h4>
                         </div>
-                    </div>
-                    <div class="col-md-6 hidden-xs">
-                        <ul class="breadcrumb">
-                            <li>Extra Pages</li>
-                            <li class="active">Blank Page</li>
-                        </ul>
+                        <div class="panel-body">
+                            Panel Content Here
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="content">
-                @RenderBody()
-            </div>
-            @RenderPage("Footer.cshtml")
+            @RenderBody()
         </div>
+        <!-- end #content -->
+        <!-- begin theme-panel -->
+        @*@RenderPage("Theme.cshtml")*@
+        <!-- end theme-panel -->
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
     </div>
-    @RenderPage("Setting.cshtml")
-    <script src="/Areas/Admin/Content/js/jquery.js"></script>
-    <script src="/Areas/Admin/Content/js/framework.js"></script>
-    <script src="/Areas/Admin/Content/js/bootstrap.min.js"></script>
-    <script src="/Areas/Admin/Content/js/jquery.slimscroll.min.js"></script>
-    <script src="/Areas/Admin/Content/js/styleDemo.js"></script>
-    @RenderSection("js", required: false)
+    <!-- end page container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="/Areas/Admin/Content/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="/Areas/Admin/Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="/Areas/Admin/Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="/Areas/Admin/Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="/Areas/Admin/Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="/Areas/Admin/Content/crossbrowserjs/respond.min.js"></script>
+        <script src="/Areas/Admin/Content/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/Areas/Admin/Content/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/Areas/Admin/Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <!-- ================== END BASE JS ================== -->
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="/Areas/Admin/Content/js/apps.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
 </body>
 </html>
